@@ -16,4 +16,13 @@ public class LieuNaissance extends Lieu {
 
     public LieuNaissance() {}
 
+    protected LieuNaissance(String ville, String region, String pays) {
+
+        super(region, pays);
+        this.ville = ville;
+
+    }
+
+    public String getVille() { return ville; }
+
 }

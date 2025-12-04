@@ -20,7 +20,7 @@ public class Pays {
     private int id;
     @Column(name = "NOM", nullable = false, unique = true)
     private String nom;
-    @Column(name = "URL_IMDB", nullable = false, unique = true)
+    @Column(name = "URL_IMDB", unique = true)
     private String urlIMDB;
 
     @OneToMany(mappedBy = "pays")
@@ -31,6 +31,18 @@ public class Pays {
 
     public Pays() {}
 
+    protected Pays(String nom) {
+
+        if (nom.equals("USA")) {
+            nom = "United States";
+        }
+        if (nom.equals("UK")) {
+            nom = "United Kingdom";
+        }
+        this.nom = nom;
+
+    }
+
     @JsonCreator
     private Pays(@JsonProperty("nom") final String nom,
                 @JsonProperty("url") final String url) {
@@ -40,17 +52,6 @@ public class Pays {
 
     }
 
-    @Override
-    public String toString() {
-        return "Pays{" +
-                "id=" + id +
-                ", nom='" + nom + '\'' +
-                ", urlIMDB='" + urlIMDB + '\'' +
-                '}';
-    }
-
-    public String getNom() {
-        return nom;
-    }
+    public String getNom() { return nom; }
 
 }
