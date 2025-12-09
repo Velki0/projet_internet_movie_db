@@ -242,7 +242,7 @@ public class InsertionBdD {
      * Pour chaque nouvelle insertion, l'acteur est vérifié s'il n'existe pas déjà en base.
      * @param film Film dont la liste des rôles doit être insérée.
      */
-    public static void insererRoles(Film film) {
+    private static void insererRoles(Film film) {
 
         Set<Role> roles = film.getRoles();
         for (Role role : roles) {
@@ -258,7 +258,7 @@ public class InsertionBdD {
      * Pour chaque nouvelle insertion, le lieu de naissance est vérifié s'il n'existe pas déjà en base.
      * @param role Rôle d'un acteur qui doit être inséré.
      */
-    public static void insererActeur(Role role) {
+    private static void insererActeur(Role role) {
 
         Personne acteur = role.getActeur();
         if (acteur != null) {
@@ -281,7 +281,7 @@ public class InsertionBdD {
      * Une vérification pour le pays du lieu doit être réalisée avant chaque nouvelle insertion.
      * @param personne Personne dont le lieu de naissance doit être assigné.
      */
-    public static void assignerLieuNaissance(Personne personne) {
+    private static void assignerLieuNaissance(Personne personne) {
 
         LieuNaissance lieuNaissance = personne.getLieuNaissance();
         if (lieuNaissance != null) {
@@ -306,7 +306,7 @@ public class InsertionBdD {
      * Méthode d'insertion du film.
      * @param film Film à insérer en base.
      */
-    public static void insererFilm(Film film) {
+    private static void insererFilm(Film film) {
 
             em.persist(film);
 

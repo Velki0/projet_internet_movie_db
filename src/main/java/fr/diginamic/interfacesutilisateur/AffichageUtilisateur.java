@@ -20,7 +20,7 @@ public class AffichageUtilisateur {
      * Méthode permettant d'afficher la filmographie pour un acteur renseigné par l'utilisateur.
      * @param emf L'entité manager factory de la base de donnée, permettant le lien avec l'application.
      */
-    public static void afficherFilmographieActeur(EntityManagerFactory emf) {
+    protected static void afficherFilmographieActeur(EntityManagerFactory emf) {
 
         EntityManager em = emf.createEntityManager();
         System.out.println("-------------------------------------------------------------------------------------------------------\n" +
@@ -47,7 +47,7 @@ public class AffichageUtilisateur {
      * Méthode permettant d'afficher le casting d'un film renseigné par l'utilisateur.
      * @param emf L'entité manager factory de la base de donnée, permettant le lien avec l'application.
      */
-    public static void afficherCastingFilm(EntityManagerFactory emf) {
+    protected static void afficherCastingFilm(EntityManagerFactory emf) {
 
         EntityManager em = emf.createEntityManager();
         System.out.println("-------------------------------------------------------------------------------------------------------\n" +
@@ -74,7 +74,7 @@ public class AffichageUtilisateur {
      * Méthode permettant d'afficher la liste de films sortis entre deux années renseignées par l'utilisateur.
      * @param emf L'entité manager factory de la base de donnée, permettant le lien avec l'application.
      */
-    public static void afficherFilmsSortisEntreDeuxAnnees(EntityManagerFactory emf) {
+    protected static void afficherFilmsSortisEntreDeuxAnnees(EntityManagerFactory emf) {
 
         EntityManager em = emf.createEntityManager();
         System.out.println("-------------------------------------------------------------------------------------------------------\n" +
@@ -109,7 +109,7 @@ public class AffichageUtilisateur {
      * Méthode permettant d'afficher la liste de films en commun où jouent deux acteurs renseignés par l'utilisateur.
      * @param emf L'entité manager factory de la base de donnée, permettant le lien avec l'application.
      */
-    public static void afficherFilmsCommunsEntreDeuxActeurs(EntityManagerFactory emf) {
+    protected static void afficherFilmsCommunsEntreDeuxActeurs(EntityManagerFactory emf) {
 
         EntityManager em = emf.createEntityManager();
         System.out.println("-------------------------------------------------------------------------------------------------------\n" +
@@ -141,7 +141,7 @@ public class AffichageUtilisateur {
      * Méthode permettant d'afficher la filmographie pour un acteur et entre deux années renseignés par l'utilisateur.
      * @param emf L'entité manager factory de la base de donnée, permettant le lien avec l'application.
      */
-    public static void afficherFilmsCommunsEntreDeuxActeursEntreDeuxAnnees(EntityManagerFactory emf) {
+    protected static void afficherFilmsCommunsEntreDeuxActeursEntreDeuxAnnees(EntityManagerFactory emf) {
 
         EntityManager em = emf.createEntityManager();
         System.out.println("-------------------------------------------------------------------------------------------------------\n" +
@@ -179,7 +179,7 @@ public class AffichageUtilisateur {
      * Méthode permettant d'afficher des acteurs et actrices en commun entre deux films renseignés par l'utilisateur.
      * @param emf L'entité manager factory de la base de donnée, permettant le lien avec l'application.
      */
-    public static void afficherActeursCommunsEntreDeuxFilms(EntityManagerFactory emf) {
+    protected static void afficherActeursCommunsEntreDeuxFilms(EntityManagerFactory emf) {
 
         EntityManager em = emf.createEntityManager();
         System.out.println("-------------------------------------------------------------------------------------------------------\n" +

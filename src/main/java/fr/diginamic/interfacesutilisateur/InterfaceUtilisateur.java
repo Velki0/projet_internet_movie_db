@@ -79,7 +79,7 @@ public class InterfaceUtilisateur {
      * Méthode permettant de demander à l'utilisateur d'entrer le nom d'un acteur ou actrice.
      * @return Le nom inscrit par l'utilisateur.
      */
-    public static String demanderIdentiteActeur(){
+    protected static String demanderIdentiteActeur(){
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Veuillez choisir le nom d'un acteur ou une actrice.");
@@ -91,7 +91,7 @@ public class InterfaceUtilisateur {
      * Méthode permettant de demander à l'utilisateur d'entrer le titre d'un film.
      * @return Le titre du film inscrit par l'utilisateur.
      */
-    public static String demanderFilm(){
+    protected static String demanderFilm(){
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Veuillez choisir le titre d'un film.");
@@ -103,7 +103,7 @@ public class InterfaceUtilisateur {
      * Méthode permettant de demander à l'utilisateur d'entrer une année de parution.
      * @return L'année inscrite par l'utilisateur.
      */
-    public static String demanderAnnee(){
+    protected static String demanderAnnee(){
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Veuillez entrer une année de parution.");
