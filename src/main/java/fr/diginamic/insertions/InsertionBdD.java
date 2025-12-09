@@ -29,7 +29,7 @@ public class InsertionBdD {
     /** L'entité manager qui permet de gérer l'API. */
     private static EntityManager em;
     /** Logger permettant de repérer les informations du nombre de données ou les éventuels mauvais réglages */
-    private static final Logger LOGGER = LoggerFactory.getLogger("fr.diginamic.insertions.LoggerFilm");
+    private static final Logger LOGGER_INSERTION = LoggerFactory.getLogger("fr.diginamic.insertions.LoggerFilm");
 
     /**
      * Méthode permettant de mettre en base de donnée chaque film à partir d'une liste.
@@ -42,12 +42,12 @@ public class InsertionBdD {
 
         double debut = System.currentTimeMillis();
 
-        LOGGER.info("Nombre total de films à parser : {}", films.size());
+        LOGGER_INSERTION.info("Nombre total de films à parser : {}", films.size());
         insererChaqueElement(films);
         em.close();
 
         double fin = System.currentTimeMillis();
-        LOGGER.info("Fin du parse. Temps écoulé : {} secondes", (fin - debut) / 1000);
+        LOGGER_INSERTION.info("Fin du parse. Temps écoulé : {} secondes", (fin - debut) / 1000);
 
     }
 
@@ -65,7 +65,7 @@ public class InsertionBdD {
         transaction.begin();
         for (Film film : films) {
             if (em.find(Film.class, film.getId()) == null) {
-                LOGGER.info("Film numéro : {}", index++);
+                LOGGER_INSERTION.info("Film numéro : {}", index++);
                 insererLangue(film);
                 insererPays(film);
                 insererGenres(film);
@@ -80,7 +80,7 @@ public class InsertionBdD {
                     transaction.begin();
                 }
             } else {
-                LOGGER.warn("Film avec l'id {} déjà existant !", film.getId());
+                LOGGER_INSERTION.warn("Film avec l'id {} déjà existant !", film.getId());
                 index++;
             }
         }
