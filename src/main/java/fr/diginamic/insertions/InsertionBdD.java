@@ -119,8 +119,8 @@ public class InsertionBdD {
         if (pays != null) {
             try {
                 Pays paysBdD = em.createQuery("FROM Pays p WHERE p.nom = :nomPays", Pays.class)
-                               .setParameter("nomPays", pays.getNom())
-                               .getSingleResult();
+                                 .setParameter("nomPays", pays.getNom())
+                                 .getSingleResult();
                 if (paysBdD.getUrlIMDB() == null) {
                     paysBdD.setUrlIMDB(pays.getUrlIMDB());
                 }
