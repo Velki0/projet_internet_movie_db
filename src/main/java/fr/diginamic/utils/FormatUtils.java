@@ -62,8 +62,8 @@ public class FormatUtils {
      */
     public static LocalDate formatterDate(String date) {
 
+        date = date.trim();
         if (!date.isBlank()) {
-            date = date.trim();
             Set<DateTimeFormatter> formatsDate = new HashSet<>();
             formatsDate.add(DateTimeFormatter.ofPattern("MMMM d yyyy", Locale.ENGLISH));
             formatsDate.add(DateTimeFormatter.ofPattern("MMM d yyyy", Locale.ENGLISH));
@@ -91,9 +91,9 @@ public class FormatUtils {
      */
     public static LieuNaissance formatterLieuNaissance(String lieuNaissance) {
 
+        lieuNaissance = lieuNaissance.trim();
         if (!lieuNaissance.isBlank()) {
 
-            lieuNaissance = lieuNaissance.trim();
             String ville, region, pays, nouvelleVille, nouvelleRegion, nouveauPays;
 
             // Cas 1 : Ville, Région, Pays [now nouvelle ville, nouveau pays]
